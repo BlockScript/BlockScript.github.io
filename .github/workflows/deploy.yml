@@ -25,8 +25,8 @@ jobs:
     - name: Checkout scratch-gui
       uses: actions/checkout@v4
       with:
-        repository: BlockScript/BlockScript-GUI
-        path: BlockScript-GUI
+        repository: BlockScript/scratch-gui
+        path: scratch-gui
     - name: Setup GitHub Pages
       id: pages
       uses: actions/configure-pages@v4
@@ -36,13 +36,13 @@ jobs:
         node-version: 20
     - name: Build
       run: |
-        cd BlockScript-GUI
+        cd scratch-gui
         npm ci
         NODE_ENV=production ROUTING_STYLE=hash npm run build
     - name: Upload pages artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./BlockScript-GUI/build/
+        path: ./scratch-gui/build/
         retention-days: 30
 
   deploy:

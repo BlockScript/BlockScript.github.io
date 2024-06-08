@@ -39,8 +39,6 @@ jobs:
         cd BlockScript-GUI
         npm ci
         NODE_ENV=production ROUTING_STYLE=hash npm run build
-    - name: Patch
-      run: python3 patch.py
     - name: Upload pages artifact
       uses: actions/upload-pages-artifact@v3
       with:
